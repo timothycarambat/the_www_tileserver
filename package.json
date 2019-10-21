@@ -1,0 +1,46 @@
+{
+  "name": "geojson-tile-server",
+  "version": "1.2.0",
+  "main": "dist/cli.js",
+  "typings": "dist/cli.d.ts",
+  "keywords": [
+    "GeoJSON",
+    "slippy map",
+    "tile server",
+    "geojson-vt"
+  ],
+  "bin": {
+    "geojson-tile-server": "./bin/run.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "nodemon --watch ./data/ --ext geojson --delay 3 && tsc-watch --onSuccess \"node ./dist/cli.js\" --onFailure \"echo Compilation Failed\"",
+    "serve": "node dist/cli.js",
+    "patch-release": "npm version patch && npm publish && git push --follow-tags",
+    "minor-release": "npm version minor && npm publish && git push --follow-tags",
+    "dry-run": "npm publish --dry-run",
+    "dev": "tsc && nodemon --watch ./src/* --ext ts --delay 3 --exec \"npm run build && npm run serve\""
+  },
+  "author": "Erik Vullings <erik.vullings@gmail.com> (http://www.tno.nl)",
+  "license": "MIT",
+  "description": "A simple tile service, that takes one or more GeoJSON files and offers them as slippy maps in MVT, VT or GeoJSON format.",
+  "dependencies": {
+    "command-line-args": "^5.1.1",
+    "command-line-usage": "^5.0.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "geojson-vt": "^3.2.1",
+    "jsonminify": "^0.4.1",
+    "nodemon": "^1.19.4",
+    "vt-pbf": "^3.1.1"
+  },
+  "devDependencies": {
+    "tsc-watch": "^2.2.1",
+    "@types/command-line-args": "^5.0.0",
+    "@types/cors": "^2.8.5",
+    "@types/express": "^4.17.0",
+    "@types/geojson": "^7946.0.7",
+    "@types/node": "^12.0.8",
+    "typescript": "^3.5.2"
+  }
+}
