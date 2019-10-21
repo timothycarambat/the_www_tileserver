@@ -12,7 +12,7 @@ import {appendGeoJSON} from './append';
 /** GeojsonVT extent option */
 const extent = 4096;
 const emptyResponse = { tile: undefined, x: 0, y: 0, z: 0 };
-const geoJSONFile = path.join(__dirname, `../data/sample.geojson`);
+const geoJSONFile = path.join(__dirname, `../data/production.geojson`);
 const protoResponse = (status: boolean, msg: string) => {
   return {status, msg}
 }
@@ -119,8 +119,7 @@ const startService = async (filenames: string | string[], options: ICommandOptio
 
 export const createService = (options: ICommandOptions) => {
   options.data = './data'
-  options.port = 8123
-
+  options.port = 8080
 
   const dataFolder = path.resolve(options.data || process.env.DATAFOLDER || './data');
   console.log(`Reading GeoJSON files from ${dataFolder}`);
