@@ -25,3 +25,5 @@ const geoJSONFile = path.join(__dirname, `../data/sample.geojson`);
 options.data = './data'
 options.port = 8123
 ```
+To start running on production use `forever` inside the app directory
+`forever -c "npm run start" -o log/logfile.log ./`
