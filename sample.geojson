@@ -1,1 +1,38 @@
-{"type":"FeatureCollection","features":[]}
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -90.07356762886047,
+              29.952354970254174
+            ],
+            [
+              -90.07356762886047,
+              29.953809768308062
+            ],
+            [
+              -90.07209777832031,
+              29.953809768308062
+            ],
+            [
+              -90.07209777832031,
+              29.952354970254174
+            ],
+            [
+              -90.07356762886047,
+              29.952354970254174
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "redirect": "https://timothycarambat.com"
+      }
+    }
+  ]
+}
